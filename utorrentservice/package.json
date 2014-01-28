@@ -1,0 +1,17 @@
+{
+  "name": "utorrent-web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-ioc": "~2.4.1",
+    "request": "~2.33.0",
+    "express": "~3.4.8",
+    "utorrent-api": "~0.1.2"
+  }
+}
