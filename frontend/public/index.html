@@ -7,7 +7,6 @@
 </head>
 <body ng-controller="torrentCtrl">
 	<button ng-click="refresh()">refresh</button>
-
 		<table>
 			<tr>
 				<td>#</td>
@@ -19,18 +18,21 @@
 				<td>ETA</td>
 				<td>Start</td>
 				<td>Stop</td>
+				<td>Remove</td>
 			</tr>
 			<tr ng-repeat="torrent in torrents">
-				<td>{{torrent.torrentQueueOrder | queue}}</td>
+				<td>{{torrent.torrentQueueOrder}}</td>
 				<td>{{torrent.name}}</td>
 				<td>{{torrent.downloaded | byte}}</td>
-				<td>To be implemented</td>
+				<td>{{getStatus(torrent)}}</td>
 				<td>{{torrent.downloadSpeed | bps}}</td>
 				<td>{{torrent.uploadSpeed | bps}}</td>
 				<td>{{torrent.eta | hms}}</td>
 				<td><button ng-click="start(torrent.hash)">Start</button></td>
 				<td><button ng-click="stop(torrent.hash)">Stop</button></td>
+				<td><button ng-click="remove(torrent)">Remove</button></td>
 			</tr>
 		</table>
+		<input ng-model="uri"><button ng-click="add()">Add</button>
 </body>
 </html>

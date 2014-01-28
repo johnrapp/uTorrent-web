@@ -19,8 +19,7 @@ angular.module('filters', [])
 		}
 	}]
 )
-.filter('hms', [
-	function() {
+.filter('hms', function() {
 		return function(input) {
 			var units = [
 				{value: input % 60, name: 's'},
@@ -31,10 +30,5 @@ angular.module('filters', [])
 			else units.splice(2, 1);
 			return units[1].value + units[1].name + ' ' + units[0].value + units[0].name;
 		}
-	}]
-)
-.filter('queue', function(byteFilter) {
-	return function(input) {
-		return input < 0 ? '' : input;
 	}
-});
+)
