@@ -1,0 +1,36 @@
+<html ng-app="app">
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+	<script type="text/javascript" src="filters.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="torrentCtrl">
+	<button ng-click="refresh()">refresh</button>
+
+		<table>
+			<tr>
+				<td>#</td>
+				<td>Name</td>
+				<td>Size</td>
+				<td>Status</td>
+				<td>Down Speed</td>
+				<td>Up Speed</td>
+				<td>ETA</td>
+				<td>Start</td>
+				<td>Stop</td>
+			</tr>
+			<tr ng-repeat="torrent in torrents">
+				<td>{{torrent.torrentQueueOrder | queue}}</td>
+				<td>{{torrent.name}}</td>
+				<td>{{torrent.downloaded | byte}}</td>
+				<td>To be implemented</td>
+				<td>{{torrent.downloadSpeed | bps}}</td>
+				<td>{{torrent.uploadSpeed | bps}}</td>
+				<td>{{torrent.eta | hms}}</td>
+				<td><button ng-click="start(torrent.hash)">Start</button></td>
+				<td><button ng-click="stop(torrent.hash)">Stop</button></td>
+			</tr>
+		</table>
+</body>
+</html>
