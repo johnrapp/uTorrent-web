@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'))
 		if(user.username === username && user.password === password) match = true;
 	});
 	return match;
-}, 'S3jIsd4I65FDSniodgs'));
+}, 'Enter your credentials!'));
 
 server.listen(8080);
 console.log('SERVER UP AND RUNNING');
